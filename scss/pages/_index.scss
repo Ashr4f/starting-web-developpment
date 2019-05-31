@@ -1,0 +1,181 @@
+.container {
+    padding: rem(30) 0;
+    background-color: $main-background-color;
+}
+
+.section-container {
+    position: relative;
+    max-width: rem(500);
+    margin: 0 auto;
+    background-color: $main-section-background-color;
+    border-radius: rem(4);
+    @include box-shadow(0px, 1px, 4px, -2px, rgba(0, 0, 0, 0.5));
+
+    &:not(:last-of-type) {
+        margin-bottom: rem(20);
+    }
+}
+
+.profile-container {
+    position: relative;
+    text-align: center;
+    padding: rem(2) rem(20);
+    padding-bottom: rem(12.5);
+
+    .profile-image-container {
+        position: relative;
+        width: rem(106);
+        height: rem(106);
+        margin: 0 auto;
+        margin-top: rem(18);
+
+        .profile-image {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            border: rem(3) solid #cecece;
+        }
+    }
+
+    .profile-name-container {
+        position: relative;
+        padding-top: rem(20);
+
+        .profile-name {
+            color: $theme-color;
+            font-size: rem(22.3);
+            letter-spacing: rem(-0.5);
+        }
+    }
+
+    .profile-profession-container {
+        .profile-profession {
+            padding: rem(18) 0;
+            padding-bottom: rem(16);
+            font-size: rem(17.5);
+        }
+    }
+
+    .profile-description-container {
+        .profile-description {
+            line-height: rem(23);
+            text-align: justify;
+            font-size: rem(14.8);
+            font-family: $secondaryFont;
+        }
+    }
+
+    .redirect-button-container {
+        position: relative;
+        padding-top: rem(8);
+
+        .redirect-button {
+            display: inline-block;
+            max-width: 100%;
+            font-size: rem(14);
+            padding: rem(12) rem(10);
+            border-radius: rem(4);
+            background-color: $theme-color;
+            color: #ffffff;
+        }
+    }
+}
+
+.social-networks-links-container {
+    position: relative;
+}
+
+.social-networks-links {
+    position: relative;
+    padding: rem(56) rem(100);
+    @include clearfix();
+
+    .social-network-link {
+        display: inline-block;
+        text-align: center;
+        min-height: rem(45);
+        max-height: rem(50);
+        width: 33.3333%;
+        float: $left;
+
+        @media screen and (max-width: 400px) {
+            width: 100%;
+            float: none;
+
+            &:not(:last-of-type) {
+                margin-bottom: rem(32);
+            }
+        }
+
+        a {
+            display: block;
+            color: rgba($main-font-color, 0.45);
+
+            &:hover {
+                transition: color 0.35s ease-in-out;
+                color: $theme-color;
+            }
+
+            .social-network-icon-container {
+                padding-bottom: rem(8);
+
+                i {
+                    font-size: rem(22);
+                }
+            }
+
+
+            .social-network-name-container {
+                .social-network-name {
+                    font-size: rem(14);
+                }
+            }
+        }
+    }
+}
+
+.section-title-container {
+    position: relative;
+    text-align: center;
+
+    .section-title {
+        font-size: rem(17);
+        padding: rem(38);
+    }
+}
+
+.movies-container {
+    position: relative;
+    padding: rem(12) rem(32);
+
+    .movie {
+        padding-bottom: rem(52);
+
+        &:last-of-type {
+            padding-bottom: rem(46);
+        }
+
+        .movie-thumbnail {
+            img {
+                width: rem(80);
+                height: auto;
+            }
+        }
+
+        .movie-description {
+            .movie-title {
+                font-size: rem(16);
+                text-align: center;
+            }
+
+            .movie-summary {
+                padding-top: rem(16);
+                padding-#{$left}: rem(6);
+                font-size: rem(15);
+                text-align: justify;
+                line-height: rem(24);
+            }
+        }
+
+    }
+}

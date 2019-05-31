@@ -1,0 +1,165 @@
+@charset "UTF-8";
+
+// FONTS
+
+
+// MONTSERRAT
+
+@font-face {
+    font-family: Montserrat_ExtraLight;
+    src: url(./fonts/Montserrat/Montserrat-ExtraLight.ttf);
+}
+
+@font-face {
+    font-family: Montserrat_Light;
+    src: url(./fonts/Montserrat/Montserrat-Light.ttf);
+}
+
+@font-face {
+    font-family: Montserrat_Regular;
+    src: url(./fonts/Montserrat/Montserrat-Regular.ttf);
+}
+
+@font-face {
+    font-family: Montserrat_SemiBold;
+    src: url(./fonts/Montserrat/Montserrat-SemiBold.ttf);
+}
+
+@font-face {
+    font-family: Montserrat_Bold;
+    src: url(./fonts/Montserrat/Montserrat-Bold.ttf);
+}
+
+@font-face {
+    font-family: Montserrat_ExtraBold;
+    src: url(./fonts/Montserrat/Montserrat-ExtraBold.ttf);
+}
+
+
+// OPEN SANS
+
+@font-face {
+    font-family: OpenSans_ExtraLight;
+    src: url(./fonts/Open_Sans/OpenSans-ExtraLight.ttf);
+}
+
+@font-face {
+    font-family: OpenSans_Light;
+    src: url(./fonts/Open_Sans/OpenSans-Light.ttf);
+}
+
+@font-face {
+    font-family: OpenSans_Regular;
+    src: url(./fonts/Open_Sans/OpenSans-Regular.ttf);
+}
+
+@font-face {
+    font-family: OpenSans_SemiBold;
+    src: url(./fonts/Open_Sans/OpenSans-SemiBold.ttf);
+}
+
+@font-face {
+    font-family: OpenSans_Bold;
+    src: url(./fonts/Open_Sans/OpenSans-Bold.ttf);
+}
+
+::selection {
+    background-color: $selection-background-color;
+    color: $main-font-color;
+}
+
+::-moz-selection {
+    background-color: $selection-background-color;
+    color: $main-font-color;
+}
+
+html {
+    font-size: #{$baseFontSize}px;
+
+    @media screen and (min-width: 768px) {
+        @include fluid-type(768px, 1225px, 14px, 16px);
+    }
+
+    @media screen and (max-width: 768px) {
+        @include fluid-type(1px, 768px, 12px, 16px);
+    }
+}
+
+body {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    font-family: $mainFont;
+    font-size: rem(16);
+    background-color: #0e0e0e;
+    color: $main-font-color;
+}
+
+input,
+a,
+i,
+button {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+.no-select,
+img {
+    -webkit-touch-callout: none;
+    @include prefixer(user-select, none, webkit khtml moz o ms);
+}
+
+ul,
+ol,
+li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+span,
+p,
+a,
+strong,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+    padding: 0;
+
+    &.extra-bold {
+        font-family: $mainFont_ExtraBold;
+        font-weight: 900;
+    }
+
+    &.bold {
+        font-family: $mainFont_Bold;
+        font-weight: 900;
+    }
+
+    &.semi-bold {
+        font-family: $mainFont_SemiBold;
+        font-weight: 600;
+    }
+
+    &.light {
+        font-family: $mainFont_Light;
+    }
+}
+
+.break-long-words {
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    -ms-word-break: break-all;
+    word-break: break-all;
+    word-break: break-word;
+    @include prefixer(hyphens, auto, webkit moz ms);
+}
